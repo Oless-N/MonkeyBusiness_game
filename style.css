@@ -1,0 +1,16 @@
+body
+{
+    background-color: black;
+}
+
+.h_text
+{
+    color: azure;
+    font-size: 8em;
+    text-align:center;
+}
+.game_block
+{
+    margin: auto;
+    display: block;
+}
