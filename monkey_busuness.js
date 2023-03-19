@@ -1,6 +1,6 @@
 
 
-var game = new Phaser.Game(480, 320, Phaser.AUTO, 'Monkey_Business', { preload: preload, create: create, update: update}, Phaser.CANVAS, 'game_div');
+var game = new Phaser.Game(700, 500, Phaser.AUTO, 'Monkey_Business', { preload: preload, create: create, update: update}, Phaser.CANVAS, 'game_div');
 
 var banana;
 var monkey;
@@ -8,6 +8,12 @@ var palm;
 var mask;
 var count = 0;
 var count_text;
+
+let scaleX = this.cameras.main.width / image.width
+let scaleY = this.cameras.main.height / image.height
+let scale = Math.max(scaleX, scaleY)
+image.setScale(scale).setScrollFactor(0)
+
 
 function preload() {
     banana_im=game.load.image('banana', 'assets/sprites/banana.png');
@@ -22,8 +28,12 @@ function create() {
 
     cursors = game.input.keyboard.createCursorKeys();
 
-    game.add.sprite(0, 0, 'background');
+    bg = game.add.sprite(0, 0, 'background');
+    bg.width=game.width
+    bg.height=game.height
     palm=game.add.sprite(0, 0, 'palm');
+    palm.width=game.width
+    palm.height=game.height
     monkey=game.add.sprite(160, 110, 'monkey')
 
 
