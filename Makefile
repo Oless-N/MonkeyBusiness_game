@@ -10,4 +10,4 @@ env:
 	. ./venv/bin/activate
 
 run:
-	npm run .
+	npm start
